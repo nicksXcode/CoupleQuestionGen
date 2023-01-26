@@ -1,0 +1,110 @@
+/* General Styles  */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: linear-gradient(to right, rgba(255, 88, 88, 0.78), rgba(255, 200, 200, 0.78)), url('../img/bg2.webp');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	text-align: center;
+}
+
+
+
+/* Container Styles */
+
+.container {
+	width: 550px;
+	height: 450px;
+}
+
+.header {
+	font-size: 1.3rem;
+	color: #fff;
+	padding: 10px;
+	width: 100%;
+	margin: auto;
+	border-radius: 5px;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.main-content {
+	width: 80%;
+	height: 300px;
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 50px 40px;
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+	margin: auto;
+}
+
+.main-content .text-area {
+	font-size: 1.3rem;
+	line-height: 1.5;
+}
+
+.main-content .text-area .quote {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	color: #FF6F91;
+}
+
+
+.main-content .person {
+	font-size: 1.2rem;
+	color: blue;
+	text-transform: capitalize;
+	margin-top: 20px;
+	font-weight: bold;
+	visibility: hidden;
+}
+
+.button-area button{
+	background-color: #845EC2;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: 10px 15px;
+	margin-top: 30px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.button-area button:active {
+	background-color: lightblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
