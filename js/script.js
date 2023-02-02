@@ -3,6 +3,7 @@
 let btn = document.querySelector("#new-quote");
 let quote = document.querySelector(".quote");
 let person = document.querySelector(".person");
+let reset = document.querySelector("#reset-quote");
 
 const quotes = [{
 	quote: "Who was your first crush, and what were they like?",
@@ -47,24 +48,45 @@ const quotes = [{
 }];
 
 
-	let lastQuestion = 0;
-	let random = 0;
-
 
 btn.addEventListener('click', function(){
 
+	
+	// Filter and Create new array with a false status
+	let newArray = quotes.filter(quote => quote.status === false);
+	console.log(newArray);
+	console.log(newArray.length)
+
+	// Check if there is available questions
+	if(newArray.length > 0){
+
+		//Generate Random Number
+		random = Math.floor(Math.random() * newArray.length);
+		
+		quote.innerText = newArray[random].quote;
+		newArray[random].status = true;
+	} else {
+		// If No More Question
+		quote.innerText = "No More Question";
+		btn.style.display = "none";
+		reset.style.display = "block";
+	}
+		
+});
 
 
-	/* Generate random number */
-		random = Math.floor(Math.random() * quotes.length);
+reset.addEventListener('click', function(){
 
-	/* Check's Repeatition */
-	while (lastQuestion === random) {
-		random = Math.floor(Math.random() * quotes.length);
+	// Loop to change all status back to false
+	for(let i = 0; i < quotes.length; i++) {
+		quotes[i].status = false;
 	}
 
-	/* Display Output to Interface */
-		quote.innerText = quotes[random].quote;
-		person.innerText = quotes[random].person;
-		lastQuestion = random;
+	// Changing display style of buttons
+	reset.style.display = "none";
+	btn.style.display = "block";
+
+	quote.innerText = "Please Click The Button to Generate a Random Question, Goodluck and Enjoy";
+
+	
 });
